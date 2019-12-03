@@ -116,8 +116,8 @@ def pull_process_and_push_data(device, device_attendance_logs=None):
                 str(device_attendance_log['punch']), str(device_attendance_log['status']),
                 json.dumps(device_attendance_log, default=str)]))
             if EMPLOYEE_NOT_FOUND_ERROR_MESSAGE not in erpnext_message:
-                raise Exception('API Call to ERPNext Failed.')
-
+                #raise Exception('API Call to ERPNext Failed.')
+                continue
 
 def get_all_attendance_from_device(ip, port=4370, timeout=30, device_id=None, clear_from_device_on_fetch=False):
     #  Sample Attendance Logs [{'punch': 255, 'user_id': '22', 'uid': 12349, 'status': 1, 'timestamp': datetime.datetime(2019, 2, 26, 20, 31, 29)},{'punch': 255, 'user_id': '7', 'uid': 7, 'status': 1, 'timestamp': datetime.datetime(2019, 2, 26, 20, 31, 36)}]
